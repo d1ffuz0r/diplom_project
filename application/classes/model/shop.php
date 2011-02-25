@@ -6,7 +6,7 @@
  */
 class Model_Shop extends Model
     {
-
+    
         private $_category;
         private $_cat_product;
         private $_product;
