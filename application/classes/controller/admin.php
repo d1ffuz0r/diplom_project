@@ -1,5 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-
+/**
+ * @author d1ffuz0r gladk0w@mail.ru
+ * @license GPLv3
+ * @copyright 2011
+ */
 class Controller_Admin extends Controller_Tpl
     {
         /**

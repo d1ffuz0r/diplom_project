@@ -1,5 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-
+/**
+ * @author d1ffuz0r gladk0w@mail.ru
+ * @license GPLv3
+ * @copyright 2011
+ */
 class Controller_View extends Controller_Tpl
     {
         /**
@@ -34,7 +38,7 @@ class Controller_View extends Controller_Tpl
             {
                 $shop = Model::factory('shop');
                 $this->template->title   = __('Просмотр категории');
- 
+
                 $this->template->content = View::factory('page/view/product')
                         ->set('id',$shop->view_product($id));
             }

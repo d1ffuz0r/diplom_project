@@ -1,5 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-
+/**
+ * @author d1ffuz0r gladk0w@mail.ru
+ * @license GPLv3
+ * @copyright 2011
+ */
 class Controller_Tpl extends Controller_Template
     {
 
@@ -24,7 +28,7 @@ class Controller_Tpl extends Controller_Template
         {
             $main  = Model::factory('Main');
             $shop  = Model::factory('Shop');
-            
+
             if ($this->auto_render)
                 {
                     $this->template->categories  = $shop->get_category();
