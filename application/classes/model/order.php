@@ -93,7 +93,10 @@ class Model_Order extends Model
          */
         public function set_status($id, $status)
             {
-                DB::update('orders')->set(array('ord_status' => $status))->where('ord_id', '=', $id)->execute();
+                DB::update('orders')
+			->set(array('ord_status' => $status))
+			->where('ord_id', '=', $id)
+			->execute();
             }
 
     }
