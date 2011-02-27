@@ -6,12 +6,17 @@
  */
 class Model_Order extends Model
     {
-
+	/**
+	 * заказы пользователя
+	 * @var array
+	 */
         private $_orders;
 
         /**
+	 * просмотр заказов выбраного статуса
          * @param string $status статус заказа
-         * @return array заказы выбраного статуса. 1 - в ожидании, 2 - отказано , 3 - принято
+         * @return array заказы выбраного статуса.
+	 * @tutorial 1 - в ожидании, 2 - отказано , 3 - принято
          */
         public function view_order_s($status)
             {
@@ -24,6 +29,7 @@ class Model_Order extends Model
             }
 
         /**
+	 * просмотр заказов пользователем
          * @param string $username имя пользователя
          * @return array заказы 1 пользователя
          */
@@ -40,6 +46,7 @@ class Model_Order extends Model
             }
 
         /**
+	 * оформление заказа
          * @param mixed $array массив данных из формы заказа
          * @return string добавление заказа
          * @todo реализовать увеличение счётчика покупок у пользователя при совершении покупки
@@ -91,7 +98,7 @@ class Model_Order extends Model
             }
 
         /**
-         *
+         * установка статуса заказа
          * @param int $id id заказа
          * @param int $status статус. 1- в ожидании, 2 - отказано , 3 принято
          */

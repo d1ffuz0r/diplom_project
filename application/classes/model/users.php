@@ -7,14 +7,18 @@
 class Model_Users extends Model
     {
 
+	/**
+	 * массив с информацией о пользователе
+	 * @var array
+	 */
         private $_desk;
-        private $_id;
-        private $_name;
-        private $_password;
-        private $_email;
-        private $_data;
-        private $_allprice;
-        private $_rang;/** @var 1 - admin, 2 - cashier, 3-user */
+
+	/**
+	 * $_pang 1 - admin, 2 - cashier, 3-user
+	 * @var int
+	 */
+        private $_rang;
+
 
         /**
          * @param string $name имя пользователя

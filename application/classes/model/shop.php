@@ -6,12 +6,40 @@
  */
 class Model_Shop extends Model
     {
-    
+	/**
+	 * список категорий товаров
+	 * @var array
+	 */
         private $_category;
-        private $_cat_product;
-        private $_product;
+
+	/**
+	 * количество товаров в категории
+	 * @var int
+	 */
         private $_count;
+
+	/**
+	 * товары в категории
+	 * @var array
+	 */
+	private $_cat_product;
+
+	/**
+	 * описание товара
+	 * @var array
+	 */
+        private $_product;
+
+	/**
+	 * сделаные покупки
+	 * @var array
+	 */
         private $_kart;
+
+	/**
+	 * найденые товары
+	 * @var array
+	 */
         private $_search;
 
         /**

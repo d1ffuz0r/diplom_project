@@ -5,11 +5,29 @@
  * @copyright 2011
  */
 class Model_Main extends Model
-        {
-
+    {
+	/**
+	 * список регионов
+	 * @var array
+	 */
         private $_regions;
+
+	/**
+	 * доступные сервисы
+	 * @var array
+	 */
         private $_services;
+
+	/**
+	 * первые 2 товара для главной
+	 * @var array
+	 */
         private $_firstprod;
+
+	/**
+	 * вторые 2 товара для главной
+	 * @var array
+	 */
         private $_twoprod;
 
         /**
