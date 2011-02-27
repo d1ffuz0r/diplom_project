@@ -144,6 +144,7 @@ class Model_Shop extends Model
                 $this->_search = DB::select()
                                 ->from('product')
                                 ->where('p_desc', 'like', '%' . $searchQuery['search_q'] . '%')
+				->or_where('p_rusname', 'like', '%' . $searchQuery['search_q'] . '%')
                                 ->as_object()
                                 ->execute();
                 return $this->_search;

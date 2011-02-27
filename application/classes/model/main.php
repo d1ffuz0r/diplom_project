@@ -72,8 +72,8 @@ class Model_Main extends Model
 
         public function get_fisttwo()
             {
-                $_sql = "select * from product where p_name = 'mouse1' union
-                                select * from product where p_name = 'keyboard1'";
+                $_sql = "( SELECT * FROM product WHERE p_category = 'mouse' ORDER BY RAND() LIMIT 1)
+		   UNION ( SELECT * FROM product WHERE p_category = 'keyboard' ORDER BY RAND() LIMIT 1)";
                 $this->_firstprod = DB::query(Database::SELECT, $_sql)
                                 ->as_object()
                                 ->execute();
@@ -82,8 +82,8 @@ class Model_Main extends Model
 
         public function get_threefour()
             {
-                $_sql = "select * from product where p_name = 'nb_acessory1' union
-                                select * from product where p_name = 'monitors1'";
+                $_sql = "( SELECT * FROM product WHERE p_category = 'nb_acessory' ORDER BY RAND() LIMIT 1)
+		   UNION ( SELECT * FROM product WHERE p_category = 'monitors' ORDER BY RAND() LIMIT 1)";
                 $this->_twoprod = DB::query(Database::SELECT, $_sql)
                                 ->as_object()
                                 ->execute();

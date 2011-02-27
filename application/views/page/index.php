@@ -94,13 +94,13 @@ $(document).ready(function(){
         <span class="green"><?php echo round($desk->p_price)?> руб</span><br/>
     </div>
 </td>
-<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_name ?>.png" alt="" /> </td>
+<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_id ?>.png" alt="" /> </td>
 <? } ?>
 </tr>
 <tr>
 <? foreach($prowthree as $desk):?>
 <td class="page_center_button">
-    <a class="page_center_buy" <? if(Cookie::get('loged_in') == TRUE) { ?> href="/shop/new_order/<?php echo $desk->p_id ?>" title="Оформить заказ"><? } ?>></a>
+    <a class="page_center_buy" <? if(Cookie::get('loged_in') == TRUE) { ?> href="/shop/new_order/<?php echo $desk->p_id ?>" title="Оформить заказ"><? } ?></a>
     <a class="page_center_info" href="/view/product/<?php echo $desk->p_id ?>" title="Просмотр"><span>more-info</span></a>
 </td>
 <td class="page_center_content">
@@ -112,7 +112,7 @@ $(document).ready(function(){
         <span class="green"><?php echo round($desk->p_price)?> руб</span><br/>
     </div>
 </td>
-<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_name ?>.png" alt="" /> </td>
+<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_id ?>.png" alt="" /> </td>
 <? endforeach; ?>
 </tr>
 </table>
