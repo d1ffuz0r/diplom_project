@@ -73,7 +73,7 @@ class Controller_Page extends Controller_Tpl
 		    {
 			$this->template->title   = __('Ошибка');
 			$this->template->content = View::factory('tpl/msg')
-				->set('msg','Вы не авторизированы');
+				->set('msg',Kohana::message('msg','not_login'));
 		    }
             }
     /**

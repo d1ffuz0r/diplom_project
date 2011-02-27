@@ -3,17 +3,17 @@
 <h2>
         <form action="/shop/add_order/now" method="POST">
             <table>
-                <? foreach ($product as $p) { ?>
+                <? foreach ($product as $p) : ?>
                     <tr>
                         <td width="120">
                             <label>Товар:</label>
                         </td>
                         <td>
-                            <?=$p->p_rusname ?>
+                            <?php echo $p->p_rusname ?>
                         </td>
                         <td>
-                            <input type="hidden" name="ord_username" value="<?=Cookie::get('username');?>">
-                            <input type="hidden" name="ord_id" value="<?=$p->p_id ?>">
+                            <input type="hidden" name="ord_username" value="<?php echo Cookie::get('username');?>">
+                            <input type="hidden" name="ord_id" value="<?php echo $p->p_id ?>">
                         </td>
                     </tr>
                 <tr>
@@ -29,8 +29,8 @@
                         <label>Цена(с НДС):</label>
                     </td>
                     <td>
-                        <?=round($p->p_ndsprice) ?> р.
-                        <input type="hidden" name="ord_price" value="<?=round($p->p_ndsprice) ?>">
+                        <?php echo round($p->p_ndsprice) ?> р.
+                        <input type="hidden" name="ord_price" value="<?php echo round($p->p_ndsprice) ?>">
                     </td>
                 </tr>
                 <tr>
@@ -113,8 +113,8 @@
                         <label>Город(etc.):</label>
                     </td>
                     <td>
-                        <input type="hidden" name="ord_city" value="<?=Cookie::get('city')?>">
-                        <?=Cookie::get('r_city')?>
+                        <input type="hidden" name="ord_city" value="<?php echo Cookie::get('city')?>">
+                        <?php echo Cookie::get('r_city')?>
                     </td>
                 </tr>
                 <tr>
@@ -143,7 +143,7 @@
                     </td>
                 </tr>
             </table>
-             <? } ?>
+             <? endforeach; ?>
         </form>
 </h2>
 <p style="color: red; float: right;">Все поля обязательны к заполнению</p>

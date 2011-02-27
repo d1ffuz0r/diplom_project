@@ -6,13 +6,13 @@
         <? if(Cookie::get('loged_in') == FALSE) {?>
         <a class="registration" href="/reg">РЕГИСТРАЦИЯ</a><a class="log-in" href="/login">ВХОД</a>
         <? } else {?>
-        <a class="registration" href="/view/user/<?=Cookie::get('username');?>">Привет <?=Cookie::get('username');?></a><a class="log-in" href="/auth/logout">Выход</a>
+        <a class="registration" href="/view/user/<?php echo Cookie::get('username');?>">Привет <?php echo Cookie::get('username');?></a><a class="log-in" href="/auth/logout">Выход</a>
         <? } ?>
         </div>
     </div>
     <div id="Head_right">
         <div id="Logo">
-            <div id="Name"><span class="blue"><?=Kohana::config('site.title');?></span></div>
+            <div id="Name"><span class="blue"><?php echo Kohana::config('site.title');?></span></div>
             <div id="Informations"></div>
         </div>
         <div id="Top_menu">

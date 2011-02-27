@@ -57,12 +57,12 @@ $(document).ready(function(){
 <tr>
 <div id="slideshow">
 <div id="slidesContainer">
-<? foreach($service as $serv) { ?>
+<? foreach($service as $serv) : ?>
     <div class="slide">
-    <a class="page_header_img"><img src="img/<?=$serv->image ?>" alt="<?=$serv->rusname ?>" /></a>
-    <a class="page_header_text" style="font-size: 20px;"><?=$serv->text ?></a>
+    <a class="page_header_img"><img src="img/<?php echo $serv->image ?>" alt="<?php echo $serv->rusname ?>" /></a>
+    <a class="page_header_text" style="font-size: 20px;"><?php echo $serv->text ?></a>
     </div>
-<? } ?>
+<? endforeach; ?>
 </div>
 </div>
 </tr>
@@ -82,38 +82,38 @@ $(document).ready(function(){
 <tr>
 <? foreach($prodone as $desk){?>
 <td class="page_center_button">
-    <a class="page_center_buy" <? if(Cookie::get('loged_in') == TRUE) { ?> href="/shop/new_order/<?=$desk->p_id ?>" title="Оформить заказ"<? } ?> ><span>buy</span></a>
-    <a class="page_center_info" href="/view/product/<?=$desk->p_id ?>" title="Просмотр"><span>more-info</span></a>
+    <a class="page_center_buy" <? if(Cookie::get('loged_in') == TRUE) { ?> href="/shop/new_order/<?php echo $desk->p_id ?>" title="Оформить заказ"<? } ?> ><span>buy</span></a>
+    <a class="page_center_info" href="/view/product/<?php echo $desk->p_id ?>" title="Просмотр"><span>more-info</span></a>
 </td>
 <td class="page_center_content">
     <div class="page_center_text">
-        <span class="blue2"><?=$desk->p_rusname ?></span><br/>
-        <span class="gray"><?=$desk->p_desc ?></span><br/>
+        <span class="blue2"><?php echo $desk->p_rusname ?></span><br/>
+        <span class="gray"><?php echo $desk->p_desc ?></span><br/>
         <span class="gray">Cras ut: ligula nec</span><br/>
         <br/>
-        <span class="green"><?=round($desk->p_price)?> руб</span><br/>
+        <span class="green"><?php echo round($desk->p_price)?> руб</span><br/>
     </div>
 </td>
-<td class="page_center_img"><img align="right" src="<?=Kohana::$base_url;?>img/<?=$desk->p_category ?>/<?=$desk->p_name ?>.png" alt="" /> </td>
+<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_name ?>.png" alt="" /> </td>
 <? } ?>
 </tr>
 <tr>
-<? foreach($prowthree as $desk){?>
+<? foreach($prowthree as $desk):?>
 <td class="page_center_button">
-    <a class="page_center_buy" <? if(Cookie::get('loged_in') == TRUE) { ?> href="/shop/new_order/<?=$desk->p_id ?>" title="Оформить заказ"><? } ?></a>
-    <a class="page_center_info" href="/view/product/<?=$desk->p_id ?>" title="Просмотр"><span>more-info</span></a>
+    <a class="page_center_buy" <? if(Cookie::get('loged_in') == TRUE) { ?> href="/shop/new_order/<?php echo $desk->p_id ?>" title="Оформить заказ"><? } ?>></a>
+    <a class="page_center_info" href="/view/product/<?php echo $desk->p_id ?>" title="Просмотр"><span>more-info</span></a>
 </td>
 <td class="page_center_content">
     <div class="page_center_text">
-        <span class="blue2"><?=$desk->p_rusname ?></span><br/>
-        <span class="gray"><?=$desk->p_desc ?></span><br/>
+        <span class="blue2"><?php echo $desk->p_rusname ?></span><br/>
+        <span class="gray"><?php echo $desk->p_desc ?></span><br/>
         <span class="gray">Cras ut: ligula nec</span><br/>
         <br/>
-        <span class="green"><?=round($desk->p_price)?> руб</span><br/>
+        <span class="green"><?php echo round($desk->p_price)?> руб</span><br/>
     </div>
 </td>
-<td class="page_center_img"><img align="right" src="<?=Kohana::$base_url;?>img/<?=$desk->p_category ?>/<?=$desk->p_name ?>.png" alt="" /> </td>
-<? } ?>
+<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_name ?>.png" alt="" /> </td>
+<? endforeach; ?>
 </tr>
 </table>
 </div>

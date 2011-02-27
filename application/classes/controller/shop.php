@@ -27,7 +27,7 @@ class Controller_Shop extends Controller_Tpl
                     {
                         $this->template->title = __('Ошибка');
                         $this->template->content = View::factory('tpl/msg')
-                                        ->set('msg', 'Вы не авторизированы');
+                                        ->set('msg',Kohana::message('msg','not_login'));
                     }
             }
 
@@ -66,7 +66,7 @@ class Controller_Shop extends Controller_Tpl
                         {
                             $this->template->title = __('Ошибка');
                             $this->template->content = View::factory('tpl/msg')
-                                            ->set('msg', 'Вы не заполнили все поля');
+                                            ->set('msg', Kohana::message('msg','empty_field'));
                         }
             }
 
@@ -93,7 +93,7 @@ class Controller_Shop extends Controller_Tpl
                     {
                         $this->template->title = __('Ошибка');
                         $this->template->content = View::factory('tpl/msg')
-                                        ->set('msg', 'Вы не заполнили поле поиска');
+                                        ->set('msg', Kohana::message('msg','not_search'));
                     }
             }
 
@@ -107,7 +107,7 @@ class Controller_Shop extends Controller_Tpl
                 $order->set_status($id, 3);
                 $this->template->title = __('Подтверждено');
                 $this->template->content = View::factory('tpl/msg')
-                                ->set('msg', '<h2>Заказ принят</h2>');
+                                ->set('msg', Kohana::message('msg','order_add'));
             }
 
         /**
@@ -120,7 +120,7 @@ class Controller_Shop extends Controller_Tpl
                 $order->set_status($id, 2);
                 $this->template->title = __('Подтверждено');
                 $this->template->content = View::factory('tpl/msg')
-                                ->set('msg', '<h2>Заказ отклонён</h2>');
+                                ->set('msg', Kohana::message('msg','order_denied'));
             }
 
     }

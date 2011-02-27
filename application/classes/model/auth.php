@@ -24,11 +24,11 @@ class Model_Auth extends Model
                         Cookie::set('loged_in', TRUE);
                         Cookie::set('username', $login);
 
-                        return 'Вы авторизированы';
+                        return Kohana::message('msg','auth_success');
                     }
                 else
                     {
-                        return 'Ошибка. введите правильный логин или пароль';
+                        return Kohana::message('msg','auth_error');
                     }
             }
 
@@ -46,7 +46,7 @@ class Model_Auth extends Model
                                 ->execute();
                 if ($query->count()>=1)
                     {
-                        return 'Ошибка. такой логин уже существует';
+                        return Kohana::message('msg', 'reg_error');
                     }
                 else
                     {

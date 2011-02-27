@@ -24,7 +24,7 @@ class Controller_Admin extends Controller_Tpl
                     {
                         $this->template->title   = __('Ошибка');
                         $this->template->content = View::factory('tpl/msg')
-                                ->set('msg','В этот раздел имеют доступ только пользователи с рангом: 1');
+                                ->set('msg',Kohana::message('msg', 'no_access'));
                     }
             }
     }

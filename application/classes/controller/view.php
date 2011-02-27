@@ -25,6 +25,7 @@ class Controller_View extends Controller_Tpl
                 $per_page   = $pagination->items_per_page;
                 $offset     = $per_page * ($page-1);
                 $page_links = $pagination->render();
+		
                 $this->template->title   = __('Просмотр категории');
                 $this->template->content = View::factory('page/view/cat')
                                                     ->set('id', $shop->view_category($cat,$offset))
@@ -37,8 +38,8 @@ class Controller_View extends Controller_Tpl
         public function action_product($id)
             {
                 $shop = Model::factory('shop');
-                $this->template->title   = __('Просмотр категории');
 
+                $this->template->title   = __('Просмотр категории');
                 $this->template->content = View::factory('page/view/product')
                         ->set('id',$shop->view_product($id));
             }

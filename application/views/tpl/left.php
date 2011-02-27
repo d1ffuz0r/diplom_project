@@ -6,9 +6,9 @@
             <div class="menu_header_right"></div>
         </div>
         <div id="Menu_content">
-            <? foreach ($category as $c) { ?>
-            <a class="menu_item" href="/view/cat/<?=$c->c_name ?>"><span><?=$c->c_rusname ?></span></a><br/>
-            <? } ?>
+            <? foreach ($category as $c) : ?>
+            <a class="menu_item" href="/view/cat/<?php echo $c->c_name ?>"><span><?php echo $c->c_rusname ?></span></a><br/>
+            <? endforeach; ?>
         </div>
     </div>
     <!--search-->
@@ -33,7 +33,9 @@
         <span class="poll_question">Выберите отделение</span><br/>
             <form action="/changecity" method="POST">
             <select name="region">
-                <? foreach($regions as $r) {?><option value="<?=$r->name ?>"><?=$r->rusname ?></option><? } ?>
+                <? foreach($regions as $r) :?>
+		<option value="<?php echo $r->name ?>"><?php echo $r->rusname ?></option>
+		<? endforeach; ?>
             <input type="submit" value="выбрать">
             </select>
             </form>

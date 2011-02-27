@@ -87,7 +87,7 @@ class Model_Order extends Model
                                     $price
                                 ))
                                 ->execute();
-                return '<h2>Ваш заказ добавлен.<br>№ заказа:' . $id . '<br>Просмотреть ваши заказы можно на странице <a href="/orders">Заказы</a></h2>';
+                return Kohana::message('msg','order_add');
             }
 
         /**

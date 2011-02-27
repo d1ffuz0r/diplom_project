@@ -51,6 +51,6 @@ class Controller_Auth extends Controller_Tpl
 
             $this->template->title   = __('До свидания');
             $this->template->content = View::factory('tpl/msg')
-                        ->set('msg', 'До свидания! Приходите ещё!');
+                        ->set('msg',Kohana::message('msg','bye'));
         }
     }
