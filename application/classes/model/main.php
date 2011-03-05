@@ -42,6 +42,7 @@ class Model_Main extends Model
 
                 return $this->_regions;
             }
+
         /**
          * @param string $name имя города
          * @return set_cooke $name имя города
@@ -58,6 +59,7 @@ class Model_Main extends Model
                 Cookie::set('city', $name);
                 Cookie::set('r_city', $rusname);
             }
+	    
         /**
          * @param array выдаём массив с предоставляемыми услугами
          */

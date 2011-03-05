@@ -27,6 +27,7 @@ class Controller_Cashier extends Controller_Tpl
                                 ->set('msg',Kohana::message('msg', 'no_access'));
                     }
             }
+
         /**
          * @return HTML вывод менеджера заказов
          */
@@ -37,6 +38,7 @@ class Controller_Cashier extends Controller_Tpl
                 $this->template->content = View::factory('cashier/order_manager')
                         ->set('list',$order->view_order_s(1));
             }
+	    
         /**
          * @return HTML вывод формы оформления нового заказа
          */

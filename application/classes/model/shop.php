@@ -88,7 +88,6 @@ class Model_Shop extends Model
                               limit 10
                               offset ' . $offset . '';
 
-
                 $this->_cat_product = DB::query(Database::SELECT, $_sql)
                                 ->as_object()
                                 ->execute();

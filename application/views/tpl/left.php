@@ -19,7 +19,7 @@
         </div>
         <div id="Poll_content">
             <form action="/shop/search/q" method="POST">
-                <input type="text" name="search_q" value="поиск по товарам">
+		<input name="search_q" alt="Найти" type="text" size="20" value="поиск по товарам..." onBlur="if(this.value=='') this.value='поиск по товарам...';" onFocus=" if(this.value=='поиск по товарам...') this.value=''; ">
             </form>
         </div>
     </div>
@@ -48,7 +48,6 @@
             <div class="menu_header_right"></div>
         </div>
         <div id="Poll_content">
-            <span class="poll_question">Скачать</span><br/>
             <a class="poll_unswer" href=""><span>Скачать</span></a>
         </div>
     </div>

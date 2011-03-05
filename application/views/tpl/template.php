@@ -13,7 +13,9 @@
 <div id="Container">
 <?php echo View::factory('tpl/header'); ?>
 <div id="CentralPart">
-<?php echo View::factory('tpl/left')->set('category',$categories)->set('regions',$regions);?>
+<?php echo View::factory('tpl/left')
+	->set('category',$categories)
+	->set('regions',$regions);?>
 <div id="RightPart">
 <div id="Page">
 <?php echo $content ?>

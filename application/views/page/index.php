@@ -89,12 +89,13 @@ $(document).ready(function(){
     <div class="page_center_text">
         <span class="blue2"><?php echo $desk->p_rusname ?></span><br/>
         <span class="gray"><?php echo $desk->p_desc ?></span><br/>
-        <span class="gray">Cras ut: ligula nec</span><br/>
         <br/>
         <span class="green"><?php echo round($desk->p_price)?> руб</span><br/>
     </div>
 </td>
-<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_id ?>.png" alt="" /> </td>
+<td class="page_center_img">
+    <img align="right" src="<?php echo Kohana::$base_url;?>img/prev/<?php echo $desk->p_category ?>/<?php echo $desk->p_id ?>.png" alt=""  width="100" />
+</td>
 <? } ?>
 </tr>
 <tr>
@@ -107,13 +108,14 @@ $(document).ready(function(){
     <div class="page_center_text">
         <span class="blue2"><?php echo $desk->p_rusname ?></span><br/>
         <span class="gray"><?php echo $desk->p_desc ?></span><br/>
-        <span class="gray">Cras ut: ligula nec</span><br/>
         <br/>
         <span class="green"><?php echo round($desk->p_price)?> руб</span><br/>
     </div>
 </td>
-<td class="page_center_img"><img align="right" src="<?php echo Kohana::$base_url;?>img/<?php echo $desk->p_category ?>/<?php echo $desk->p_id ?>.png" alt="" /> </td>
-<? endforeach; ?>
+<td class="page_center_img">
+    <img align="right" src="<?php echo Kohana::$base_url;?>img/prev/<?php echo $desk->p_category ?>/<?php echo $desk->p_id ?>.png" alt="" width="100" />
+</td>
+    <? endforeach; ?>
 </tr>
 </table>
 </div>

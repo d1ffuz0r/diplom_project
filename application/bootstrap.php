@@ -76,7 +76,7 @@ Kohana::$config->attach(new Kohana_Config_File);
  */
 Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	 'cache'      => MODPATH.'cache',      // Caching with multiple backends
+	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
 	   'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
@@ -104,25 +104,25 @@ Route::set('auth','auth(/<action>)')
 Route::set('admin','admin(/<action>(/<id>))')
         ->defaults(array(
             'controller' => 'Admin',
-            'action' => 'index'
+            'action' => 'Index'
         ));
 Route::set('cashier','cashier(/<action>(/<id>))')
         ->defaults(array(
             'controller' => 'Cashier',
-            'action' => 'index'
+            'action' => 'Index'
         ));
 Route::set('default', '(<action>(/<id>))')
         ->defaults(array(
             'controller' => 'Page',
-            'action' => 'home'
+            'action' => 'Home'
         ));
 Route::set('view', '(view(/<action>(/<id>)))')
         ->defaults(array(
-            'controller'=>'View'
+            'controller' => 'View'
         ));
 Route::set('shop','(<controller>(/<action>(/<id>)))')
         ->defaults(array(
-            'controller'=>'Shop'
+            'controller' => 'Shop'
         ));
 if ( ! defined('SUPPRESS_REQUEST'))
 {

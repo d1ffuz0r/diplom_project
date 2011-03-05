@@ -6,7 +6,7 @@
  */
 class Controller_Shop extends Controller_Tpl
     {
-
+    
         /**
          * @param int $id  id продукта
          * @return HTML вывод формы для оформления заказа

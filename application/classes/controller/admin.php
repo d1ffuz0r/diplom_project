@@ -6,6 +6,7 @@
  */
 class Controller_Admin extends Controller_Tpl
     {
+
         /**
          * @param POST читаем имя пользователя
          * @return HTML выводим главную страницы админки
