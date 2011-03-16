@@ -29,8 +29,8 @@ class Controller_View extends Controller_Tpl
 
                 $this->template->title   = __('Просмотр категории');
                 $this->template->content = View::factory('page/view/cat')
-                                                    ->set('id', $shop->view_category($cat,$offset))
-                                                    ->set('pagination', $page_links);
+					    ->set('id', $shop->view_category($cat, $offset, $per_page))
+					    ->set('pagination', $page_links);
             }
 
         /**
@@ -43,7 +43,7 @@ class Controller_View extends Controller_Tpl
 
                 $this->template->title   = __('Просмотр товара');
                 $this->template->content = View::factory('page/view/product')
-                        ->set('id',$shop->view_product($id));
+					    ->set('id',$shop->view_product($id));
             }
 
         /**
@@ -55,7 +55,7 @@ class Controller_View extends Controller_Tpl
                 $user = Model::factory('users');
                 $this->template->title   = __('Просмотр пользователя');
                 $this->template->content = View::factory('page/view/user')
-                    ->set('desk', $user->view_user($name));
+					    ->set('desk', $user->view_user($name));
             }
     }
 

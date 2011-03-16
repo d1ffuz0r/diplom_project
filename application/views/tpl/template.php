@@ -24,7 +24,6 @@
 <div class="cleaner"></div>
 </div>
 <?php echo View::factory('tpl/footer'); ?>
-<?php echo View::factory('profiler/stats'); ?>
 </div>
 </div>
 </div>

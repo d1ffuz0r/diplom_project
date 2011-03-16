@@ -6,7 +6,7 @@
  */
 class Controller_Shop extends Controller_Tpl
     {
-    
+
         /**
          * @param int $id  id продукта
          * @return HTML вывод формы для оформления заказа
@@ -107,7 +107,7 @@ class Controller_Shop extends Controller_Tpl
                 $order->set_status($id, 3);
                 $this->template->title = __('Подтверждено');
                 $this->template->content = View::factory('tpl/msg')
-                                ->set('msg', Kohana::message('msg','order_add'));
+					    ->set('msg', Kohana::message('msg','order_add'));
             }
 
         /**
@@ -120,7 +120,7 @@ class Controller_Shop extends Controller_Tpl
                 $order->set_status($id, 2);
                 $this->template->title = __('Подтверждено');
                 $this->template->content = View::factory('tpl/msg')
-                                ->set('msg', Kohana::message('msg','order_denied'));
+					    ->set('msg', Kohana::message('msg','order_denied'));
             }
 
     }

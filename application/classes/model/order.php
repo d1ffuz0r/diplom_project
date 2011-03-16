@@ -21,10 +21,10 @@ class Model_Order extends Model
         public function view_order_s($status)
             {
                 $this->_orders = DB::select()
-                                ->from('orders')
-                                ->where('ord_status', '=', $status)
-                                ->as_object()
-                                ->execute();
+                                  ->from('orders')
+                                  ->where('ord_status', '=', $status)
+                                  ->as_object()
+                                  ->execute();
                 return $this->_orders;
             }
 
@@ -36,12 +36,12 @@ class Model_Order extends Model
         public function view_orders($username)
             {
                 $this->_orders = DB::select()
-                                ->from('orders')
-                                ->where('ord_username', '=', $username)
-                                ->where('ord_status', '=', 1)
-                                ->or_where('ord_status', '=', 2)
-                                ->as_object()
-                                ->execute();
+                                  ->from('orders')
+                                  ->where('ord_username', '=', $username)
+                                  ->where('ord_status', '=', 1)
+                                  ->or_where('ord_status', '=', 2)
+                                  ->as_object()
+                                  ->execute();
                 return $this->_orders;
             }
 
@@ -105,9 +105,9 @@ class Model_Order extends Model
         public function set_status($id, $status)
             {
                 DB::update('orders')
-			->set(array('ord_status' => $status))
-			->where('ord_id', '=', $id)
-			->execute();
+		 ->set(array('ord_status' => $status))
+		 ->where('ord_id', '=', $id)
+		 ->execute();
             }
 
     }

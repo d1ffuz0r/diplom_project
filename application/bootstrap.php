@@ -124,6 +124,7 @@ Route::set('shop','(<controller>(/<action>(/<id>)))')
         ->defaults(array(
             'controller' => 'Shop'
         ));
+
 if ( ! defined('SUPPRESS_REQUEST'))
 {
 	/**

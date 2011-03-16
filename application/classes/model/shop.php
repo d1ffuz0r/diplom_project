@@ -72,7 +72,7 @@ class Model_Shop extends Model
          * @param int $offset - номер страницы для постраничного вывода
          * @return array массив продуктов в категории
          */
-        public function view_category($cat, $offset)
+        public function view_category($cat, $offset, $limit)
             {
                 $_sql = 'SELECT product.*, (product.p_price+((product.p_price*n_nds.n_value)/100)) AS p_ndsprice, product.p_price/k_kurs.k_value AS p_kursprice
                               from product
@@ -85,12 +85,12 @@ class Model_Shop extends Model
                                     from kurs
                                     ) as k_kurs
                               where p_category = "' . $cat . '"
-                              limit 10
+                              limit ' . $limit . '
                               offset ' . $offset . '';
 
                 $this->_cat_product = DB::query(Database::SELECT, $_sql)
-                                ->as_object()
-                                ->execute();
+				       ->as_object()
+				       ->execute();
 
                 return $this->_cat_product;
             }
@@ -112,9 +112,9 @@ class Model_Shop extends Model
                                     from kurs
                                     ) as k_kurs
                               where p_id = "' . $id . '"';
-                $this->_product = DB::query(Database::SELECT, $_sql)
-                                ->as_object()
-                                ->execute();
+		$this->_product = DB::query(Database::SELECT, $_sql)
+				   ->as_object()
+				   ->execute();
 
                 return $this->_product;
             }
@@ -135,18 +135,45 @@ class Model_Shop extends Model
             }
 
         /**
-         * @param string $searchQuery POST данные из формы
-         * @return array найденые товары
+         * @param string $searchQueryPOST данные из формы
+         * @return array
          */
         public function search($searchQuery)
             {
                 $this->_search = DB::select()
-                                ->from('product')
-                                ->where('p_desc', 'like', '%' . $searchQuery['search_q'] . '%')
-				->or_where('p_rusname', 'like', '%' . $searchQuery['search_q'] . '%')
-                                ->as_object()
-                                ->execute();
+                                  ->from('product')
+                                  ->where('p_desc', 'like', '%' . $searchQuery['search_q'] . '%')
+				                  ->or_where('p_rusname', 'like', '%' . $searchQuery['search_q'] . '%')
+                                  ->as_object()
+                                  ->execute();
                 return $this->_search;
+            }
+        /**
+         * @param  $id
+         * @return Database_Result|object
+         */
+        public function get_one_category($id)
+            {
+               $one_category = DB::select()
+                       ->from('category')
+                       ->where('c_id', '=', $id)
+                       ->as_object()
+                       ->execute();
+                return $one_category;
+            }
+
+        /**
+         * @param  $id
+         * @return Database_Result|object
+         */
+        public function get_one_product($id)
+            {
+                $one_product = DB::select()
+                       ->from('product')
+                       ->where('p_id', '=', $id)
+                       ->as_object()
+                       ->execute();
+                return $one_product;
             }
 
     }

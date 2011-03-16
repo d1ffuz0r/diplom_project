@@ -40,7 +40,11 @@ class Model_Users extends Model
          */
         public function get_rang($name)
             {
-                $this->_rang = DB::select()->from('users')->where('u_name', '=', $name)->execute()->get('u_rang');
+                $this->_rang = DB::select()
+				->from('users')
+				->where('u_name', '=', $name)
+				->execute()
+				->get('u_rang');
                 return $this->_rang;
             }
 

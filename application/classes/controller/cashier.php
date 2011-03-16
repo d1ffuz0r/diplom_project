@@ -36,9 +36,9 @@ class Controller_Cashier extends Controller_Tpl
                 $order = Model::factory('order');
                 $this->template->title   = __('Кассир: Менеджер заказов');
                 $this->template->content = View::factory('cashier/order_manager')
-                        ->set('list',$order->view_order_s(1));
+					    ->set('list',$order->view_order_s(1));
             }
-	    
+
         /**
          * @return HTML вывод формы оформления нового заказа
          */
@@ -47,6 +47,6 @@ class Controller_Cashier extends Controller_Tpl
                 $shop = Model::factory('shop');
                 $this->template->title   = __('Кассир: оформление заказа');
                 $this->template->content = View::factory('cashier/order_add')
-                        ->set('list_cat', $shop->get_category());
+					    ->set('list_cat', $shop->get_category());
             }
     }

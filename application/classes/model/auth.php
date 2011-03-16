@@ -36,7 +36,7 @@ class Model_Auth extends Model
 	     * @param string $login  логин пользователя
 	     * @param string $password пароль полльзователя
 	     * @param string $email email пользователя
-	     * @return mixed если пользователь с таким логином существует то выдаём ошибку,если нет то регистрируем. ранг по умолчанию 3(пользователь)
+	     * @return string если пользователь с таким логином существует то выдаём ошибку,если нет то регистрируем. ранг по умолчанию 3(пользователь)
 	     */
 	    public function register($login, $password, $email)
 		{
@@ -55,6 +55,7 @@ class Model_Auth extends Model
 				    ->execute();
 			    Cookie::set('loged_in', TRUE);
 			    Cookie::set('username', $login);
+			    
 			    return 'Добро пожаловать! Вы зарегистрированы.<br>Логин:' . $login . '<br>Пароль:' . $password;
 			}
 		}

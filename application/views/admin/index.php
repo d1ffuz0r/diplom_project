@@ -2,8 +2,8 @@
 <hr>
 <table width="100%">
     <tr align="center" height="150">
-        <td width="33%">1</td>
-        <td width="33%">2</td>
+        <td width="33%"><a href="/admin/category">Категории</a></td>
+        <td width="33%"><a href="/admin/service">Сервис</a></td>
         <td width="33%">3</td>
     </tr>
     <tr align="center" height="150">

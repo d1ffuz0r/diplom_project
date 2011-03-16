@@ -15,9 +15,9 @@ class Controller_Page extends Controller_Tpl
                 $main = Model::factory('main');
                 $this->template->title   = __('Добро пожаловать');
                 $this->template->content = View::factory('page/index')
-                        ->set('service',  $main->get_services())
-                        ->set('prodone',  $main->get_fisttwo())
-                        ->set('prowthree',$main->get_threefour());
+					    ->set('service',  $main->get_services())
+					    ->set('prodone',  $main->get_fisttwo())
+					    ->set('prowthree',$main->get_threefour());
             }
 
 	/**
@@ -44,20 +44,20 @@ class Controller_Page extends Controller_Tpl
 	 */
         public function action_orders()
             {
-		if(Cookie::get('loged_in')==TRUE)
-		    {
-			$order = Model::factory('order');
-			$orders = $order->view_orders(Cookie::get('username'));
-			$this->template->title   = __('Заказы');
-			$this->template->content = View::factory('page/orders')
-				->set('list', $orders);
-		    }
-		else
-		    {
-			$this->template->title   = __('Ошибка');
-			$this->template->content = View::factory('tpl/msg')
-				->set('msg',Kohana::message('msg','not_login'));
-		    }
+                if(Cookie::get('loged_in')==TRUE)
+                    {
+                        $order = Model::factory('order');
+                        $orders = $order->view_orders(Cookie::get('username'));
+                        $this->template->title   = __('Заказы');
+                        $this->template->content = View::factory('page/orders')
+                                        ->set('list', $orders);
+                    }
+                else
+                    {
+                        $this->template->title   = __('Ошибка');
+                        $this->template->content = View::factory('tpl/msg')
+                                        ->set('msg',Kohana::message('msg','not_login'));
+                    }
             }
 
 	/**
@@ -66,20 +66,20 @@ class Controller_Page extends Controller_Tpl
 	 */
         public function action_kart()
             {
-		if(Cookie::get('loged_in')==TRUE)
-		    {
-			$shop = Model::factory('shop');
-			$orders = $shop->view_kart(Cookie::get('username'));
-			    $this->template->title   = __('Заказы');
-			    $this->template->content = View::factory('page/kart')
-				    ->set('list', $orders);
-		    }
-		else
-		    {
-			$this->template->title   = __('Ошибка');
-			$this->template->content = View::factory('tpl/msg')
-				->set('msg',Kohana::message('msg','not_login'));
-		    }
+                if(Cookie::get('loged_in')==TRUE)
+                    {
+                        $shop = Model::factory('shop');
+                        $orders = $shop->view_kart(Cookie::get('username'));
+                            $this->template->title   = __('Заказы');
+                            $this->template->content = View::factory('page/kart')
+                                        ->set('list', $orders);
+                    }
+                else
+                    {
+                        $this->template->title   = __('Ошибка');
+                        $this->template->content = View::factory('tpl/msg')
+                                        ->set('msg',Kohana::message('msg','not_login'));
+                    }
             }
 
 	/**
